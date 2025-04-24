@@ -1,0 +1,323 @@
+/* Estilos generales del cuerpo */
+body {
+    background: #f9f0ed;
+    font-family: Segoe UI sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+    min-height: 100vh;
+    margin: 0;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+/* Contenedor principal de la aplicacion */
+main {
+    width: 100%;
+    max-width: 1000px;
+    display: flex;
+    gap: 20px;
+}
+
+/* Contenedor de generacion y configuracion */
+.contenedor {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(184 84 84 0.4);
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Titulo principal de las secciones */
+h2 {
+    font-size: 1.5rem;
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #9c3d3d;
+}
+
+/* Contenedor para la salida de la clave y el boton copiar */
+.output {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Estilos para pantallas mas grandes */
+@media (min-width: 480px) {
+    .output {
+        flex-direction: row;
+    }
+}
+
+/* Campo de texto donde se muestra la clave generada */
+#claveGenerada {
+    width: 90%;
+    padding: 12px;
+    border: 1px solid #e6c2c2;
+    border-radius: 4px;
+    font-size: 14px;
+    background-color: #fffafa;
+    color: #6e2828;
+}
+
+/* Estilos para los botones */
+button {
+    background-color: #c25050;
+    border: none;
+    padding: 12px;
+    color: white;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+    margin: 0;
+}
+
+/* Estilos al pasar el raton sobre los botones */
+button:hover {
+    background-color: #a03b3b;
+}
+
+/* Boton de copiar clave */
+#copiar {
+    margin-top: 0;
+}
+
+/* Contenedor para las opciones de configuracion */
+.config {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+/* Etiquetas para las opciones de configuracion */
+.config label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+    margin-bottom: 0;
+    color: #854242;
+}
+
+/* Input para seleccionar la longitud de la clave */
+#tam {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    accent-color: #c25050;
+}
+
+/* Estilos para los checkboxes */
+input[type="checkbox"] {
+    accent-color: #c25050;
+}
+
+/* Boton para generar la clave */
+#generar {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+}
+
+/* Contenedor para el historial de contraseñas */
+#historial {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: center;
+    position: relative; /* Para posicionar la paginacion */
+    padding-bottom: 60px; /* Espacio para la paginacion */
+    box-sizing: border-box; /* Incluir padding en el alto */
+}
+
+/* Lista de contraseñas generadas */
+#contraseñas {
+    list-style: decimal;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+/* Elementos de la lista de contraseñas */
+#contraseñas li {
+    margin: 8px 0;
+    padding: 8px;
+    border-bottom: 1px solid #e6c2c2;
+    word-break: break-all;
+    font-size: 14px;
+    color: #6e2828;
+    overflow-y: auto;
+}
+
+/* Estilos para la paginacion */
+#historial .paginacion {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 15px;
+    width: 100%;
+    background-color: #ffffff;
+    padding-top: 10px;
+}
+
+/* Contenedor de los botones de paginacion */
+#historial .botones-paginacion {
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilos de los botones de paginacion */
+#historial .paginacion button {
+    background-color: #faf0f0;
+    border: 1px solid #e6c2c2;
+    color: #854242;
+    padding: 8px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 12px;
+    min-width: 30px;
+    margin: 0;
+}
+
+/* Estilos al pasar el raton sobre los botones de paginacion */
+#historial .paginacion button:hover {
+    background-color: #f0dcdc;
+}
+
+/* Estilo del boton de paginacion activo */
+#historial .paginacion button.activo {
+    background-color: #c25050;
+    color: white;
+    border-color: #c25050;
+}
+
+/* Estilos para los botones de navegacion de paginacion */
+#historial .paginacion .nav-button {
+    background-color: #f5e2e2;
+    font-weight: bold;
+    min-width: 32px;
+}
+
+/* Informacion de la pagina actual */
+#historial .paginacion .pagina-info {
+    margin-top: 5px;
+    font-size: 0.8em;
+    color: #a04747;
+}
+
+/* Estilos para la notificacion snackbar */
+#snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -125px;
+    background-color: #a03b3b;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    bottom: 30px;
+}
+
+/* Mostrar la notificacion snackbar */
+#snackbar.show {
+    visibility: visible;
+    -webkit-animation: fadein 0.5s fadeout 0.5s 2.5s;
+    animation: fadein 0.5s fadeout 0.5s 2.5s;
+}
+
+/* Animacion de entrada de la notificacion */
+@-webkit-keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+    to {
+        bottom: 30px;
+        opacity: 1;
+    }
+}
+
+/* Estilos para pantallas muy pequeñas */
+@media (max-width: 375px) {
+    body {
+        padding: 10px;
+    }
+    .contenedor {
+        padding: 15px;
+    }
+    h2 {
+        font-size: 1.3rem;
+    }
+    #claveGenerada {
+        padding: 10px;
+        font-size: 13px;
+    }
+    button {
+        padding: 10px;
+        font-size: 13px;
+    }
+    .config {
+        padding: 0 5px;
+    }
+    #historial .paginacion button {
+        padding: 6px;
+        min-width: 28px;
+        font-size: 11px;
+    }
+    #historial .paginacion .pagina-info {
+        font-size: 0.7em;
+    }
+}
+
+/* Estilos para pantallas medianas */
+@media (max-width: 920px) {
+    main {
+        flex-direction: column;
+    }
+    #historial{
+        height: 100%;
+    }
+    #historial ul{
+        margin-left: 10%;
+        width: 80%;
+    }
+    .paginacion{
+        padding: 0%;
+    }
+}
